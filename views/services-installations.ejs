@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Installations - Local Services</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    body{background:linear-gradient(180deg,#fffaf7,#f2fbff);color:#102233}
+    .hero{max-width:1100px;margin:36px auto;padding:28px;border-radius:12px;background:#fff;display:flex;gap:20px;align-items:center;box-shadow:0 18px 40px rgba(12,20,40,0.04);transition:transform .5s ease}
+    .hero img{width:300px;height:200px;object-fit:cover;border-radius:10px;transition:transform .5s ease}
+    .service-list{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .service-block{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(12,20,40,0.04);transition:transform .4s ease}
+    .service-block:hover{transform:translateY(-6px)}
+    .fade-in{opacity:0;transform:translateY(6px);transition:opacity .8s ease,transform .8s ease}
+    .loaded .fade-in{opacity:1;transform:none}
+    .loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.7);display:none;align-items:center;justify-content:center}
+    .loading-overlay.show{display:flex}
+  </style>
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">Preparing content...</div>
+  <header style="background:#fff;padding:12px 18px;box-shadow:0 6px 14px rgba(0,0,0,0.03)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:18px;">
+      <div><a href="/" style="text-decoration:none;color:var(--primary);font-weight:700">Local Services</a></div>
+      <nav style="margin-left:16px;display:flex;gap:12px"><a href="/">Home</a><a href="/">Services</a><a href="#contact">Contact</a></nav>
+    </div>
+  </header>
+
+  <main style="padding:26px;">
+    <section class="hero fade-in">
+      <img src="/css/page_6.png" alt="installations">
+      <div>
+        <h1 style="margin:0 0 8px">Installations</h1>
+        <p style="margin:0 0 12px;color:#445">Professional appliance and equipment installations by certified technicians. We ensure safe setup and testing.</p>
+        <a class="btn" href="#contact">Book Install</a>
+      </div>
+    </section>
+
+    <section class="service-list fade-in">
+      <div class="service-block"><h4>Appliance setup</h4><p>Fridge, oven, washer and more.</p></div>
+      <div class="service-block"><h4>Lighting & Fans</h4><p>Installation and replacement.</p></div>
+      <div class="service-block"><h4>Smart Home</h4><p>Integration and setup.</p></div>
+    </section>
+  </main>
+
+  <footer style="background:#091423;color:#cbd5e1;padding:20px;margin-top:30px">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div><strong style="color:#fff">Local Services</strong><div style="font-size:13px;color:#94a3b8">Trusted local installers</div></div>
+      <div style="font-size:13px;color:#94a3b8">Contact: info@example.com</div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      setTimeout(()=>document.body.classList.add('loaded'),150);
+      document.querySelectorAll('.btn').forEach(btn=>btn.addEventListener('click',()=>{
+        const ov=document.getElementById('loadingOverlay');ov.classList.add('show');setTimeout(()=>ov.classList.remove('show'),900);
+      }))
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cleaning & Upkeep - Local Services</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    body{background:linear-gradient(180deg,#f8fff9,#f3fbf7);color:#0b2b2b}
+    .hero{max-width:1100px;margin:36px auto;padding:30px;border-radius:12px;background:#fff;display:flex;gap:22px;align-items:center;box-shadow:0 16px 40px rgba(12,20,40,0.04)}
+    .hero img{width:320px;height:220px;object-fit:cover;border-radius:12px;}
+    .grid{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .item{background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 20px rgba(12,20,40,0.03);transition:transform .45s ease}
+    .item:hover{transform:translateY(-6px)}
+    .fade-in{opacity:0;transform:translateY(8px);transition:opacity .8s ease,transform .8s ease}
+    .loaded .fade-in{opacity:1;transform:none}
+    .loading-overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.7)}
+    .loading-overlay.show{display:flex}
+  </style>
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">Loading...</div>
+  <header style="background:#fff;padding:12px 18px;box-shadow:0 6px 14px rgba(0,0,0,0.03)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:18px;">
+      <div><a href="/" style="text-decoration:none;color:var(--primary);font-weight:700">Local Services</a></div>
+      <nav style="margin-left:16px;display:flex;gap:12px"><a href="/">Home</a><a href="/">Services</a><a href="#contact">Contact</a></nav>
+    </div>
+  </header>
+
+  <main style="padding:26px;">
+    <section class="hero fade-in">
+      <img src="/css/page_8.png" alt="cleaning">
+      <div>
+        <h1 style="margin:0 0 8px">Cleaning & Upkeep</h1>
+        <p style="margin:0 0 12px;color:#445">Regular and one-time cleaning services to keep your space fresh and hygienic.</p>
+        <a class="btn" href="#contact">Request Cleaning</a>
+      </div>
+    </section>
+
+    <section class="grid fade-in">
+      <div class="item"><h4>Deep cleaning</h4><p>Thorough cleaning for any space.</p></div>
+      <div class="item"><h4>Carpet & Upholstery</h4><p>Refresh textiles and surfaces.</p></div>
+      <div class="item"><h4>Garden tidy-ups</h4><p>Outdoor maintenance and cleanup.</p></div>
+    </section>
+  </main>
+
+  <footer style="background:#072023;color:#cfeee6;padding:20px;margin-top:30px">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div><strong style="color:#fff">Local Services</strong><div style="font-size:13px;color:#94a3b8">Cleaning & upkeep specialists</div></div>
+      <div style="font-size:13px;color:#94a3b8">Contact: info@example.com</div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      setTimeout(()=>document.body.classList.add('loaded'),150);
+      document.querySelectorAll('.btn').forEach(btn=>btn.addEventListener('click',()=>{const ov=document.getElementById('loadingOverlay');ov.classList.add('show');setTimeout(()=>ov.classList.remove('show'),1000)}))
+    })
+  </script>
+</body>
+</html>

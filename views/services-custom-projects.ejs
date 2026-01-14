@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Custom Projects - Local Services</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+  body{background:linear-gradient(180deg,#fffaf6,#fff6f0);color:#33180f}
+  .wrap{max-width:1100px;margin:34px auto;padding:28px}
+  .panel{background:#fff;border-radius:10px;padding:18px;box-shadow:0 18px 50px rgba(45,24,18,0.06)}
+  .media{display:flex;gap:18px;align-items:center}
+  .media img{width:360px;height:220px;object-fit:cover;border-radius:8px}
+  h1{margin:0 0 8px}
+  .actions{margin-top:12px}
+  .transition-card{transition:all .6s cubic-bezier(.2,.9,.3,1)}
+  .transition-card:hover{transform:translateY(-8px) scale(1.01)}
+  .loading{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.8)}
+  .loading.show{display:flex}
+  </style>
+</head>
+<body>
+  <div class="loading" id="loadingOverlay">Preparing the project...</div>
+  <header style="padding:12px 18px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04)">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+  <a href="/" style="font-weight:700;color:var(--primary);text-decoration:none">Local Services</a>
+  <nav style="display:flex;gap:12px"><a href="/">Home</a><a href="/">Services</a><a href="#contact">Contact</a></nav>
+  </div>
+  </header>
+
+  <main class="wrap">
+  <section class="panel transition-card">
+  <div class="media">
+  <img src="/css/page_25.png" alt="custom projects">
+  <div>
+          <h1>Custom Projects</h1>
+          <p style="color:#5a4b43">Bespoke installations, renovations, and creative builds tailored to your needs.</p>
+          <div class="actions"><a class="btn" href="#contact">Start a Project</a></div>
+  </div>
+  </div>
+  </section>
+  </main>
+
+  <footer style="background:#0b2b2b;color:#cfeee6;padding:18px;margin-top:30px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+  <div><strong style="color:#fff">Local Services</strong><div style="font-size:13px;color:#94a3b8">Custom work & renovations</div></div>
+  <div style="font-size:13px;color:#94a3b8">Call: (555) 555-555</div>
+  </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+  document.querySelectorAll('.btn').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();const ov=document.getElementById('loadingOverlay');ov.classList.add('show');setTimeout(()=>ov.classList.remove('show'),1200)}))
+  setTimeout(()=>document.body.classList.add('loaded'),180)
+  })
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Custom Projects - Local Services</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <strong>Local Services</strong>
+    <nav>
+      <a href="/">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main style="padding:60px;max-width:900px;margin:0 auto;">
+    <h1>Custom Projects</h1>
+    <p>Tailored small renovations and bespoke work built to your specs.</p>
+    <h3>Examples</h3>
+    <ul>
+      <li>Small renovations</li>
+      <li>Custom shelving</li>
+      <li>Consultation & planning</li>
+    </ul>
+    <p><a class="btn" href="/">Back to Home</a></p>
+  </main>
+
+  <script src="/css/script.js"></script>
+</body>
+</html>
